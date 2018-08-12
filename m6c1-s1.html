@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
+        <title>m6c1s1</title>
+        
+        <style type="text/css">
+            
+            #pageUiAutoComp1 {
+                margin:0 auto;
+                width:800px;
+            }
+            
+            #screenComp1 {
+                width : 800px;
+                height: 500px;
+                border:5px solid grey;
+                float:left;
+            }
+        
+            #divLvlComp1 {
+                width : 790px;
+                height: 30px;
+                border:5px solid grey;
+                float:left;
+            }
+            
+            #exeComp1 {
+                width:790px;
+                height:450px;
+                border:5px solid grey;
+                float:left;
+            }
+            
+            #questComp1 {
+                width:360px;
+                height:440px;
+                border:5px solid grey;
+                float:left;
+            }
+            
+            #answerComp1 {
+                width:250px;
+                height:440px;
+                border:5px solid grey;
+                float:left;
+            }
+            
+            #solComp1 {
+                width:150px;
+                height:440px;
+                border:5px solid grey;
+                float:left;
+            }
+            
+            .spaceExample {
+                width : 700px;
+                height:auto;
+                float:left;
+            }
+            
+            #spaceExample2 {
+                margin-bottom: 20px;
+            }
+            
+            .textExample {float:left}
+            
+            .buttonExample {
+                float :right;
+            }
+            
+            #textResolveExample1 {
+                margin-left:20px;
+                float:left;
+            }
+            
+            .titleComp {
+                float:left;
+                font-weight:bold;
+                font-size:20px;
+            }
+            
+            .uiLvlComp1 {
+                float:left;
+                margin:5px 10px;
+            }
+        
+        </style>
+        
+    </head>
+    
+    
+    <body>
+
+<!--// *************************************************************-->
+<!--        * CONTENU COURS-->
+<!-- *************************************************************/-->
+        
+        <div id="pageUiAutoComp1">  
+            
+            <h1>Chapitre 1 : Priorité des opérations</h1>
+
+            <h2>L'addition et la soustracion</h2>
+
+            <h3>Cours</h3>
+
+            <p>Dans un calcul, lorsqu'il n'y a que des additions et soustractions, on cacule de gauche à droite.</p>
+            <p>Attention, on calcule une chose à la fois !</p>
+
+    <!--*************************************************************-->
+    <!--        * CONTENU  EXEMPLES-->
+    <!--*************************************************************/-->
+
+            <h3>Exemples</h3>
+
+            <div id="spaceExample1" class="spaceExample">
+
+                <div class="textExample"> 
+
+                    <p><strong>Exemple 1 :</strong> calculer : <span id="setUpExample1">12 + 3 - 4</span></p>
+
+                    <div id="textResolveExample1">
+
+                        <p>On commence par calculer : <span id="step1Example1">12 + 3 = 15</span></p>
+
+                        <p>Puis on calcule : <span id="step2Example1">15 - 4 = 11</span></p>
+
+                        <p>On a donc le résultat du calcul : <span id="step3Example1">12 + 3 - 4 = 11</span></p>
+
+                    </div>
+
+                </div>    
+
+                <button id="buttonExample1" class="buttonExample">Un autre exemple !</button>
+
+            </div>
+
+            <div id="spaceExample2" class="spaceExample">
+
+                <div class="textExample"> 
+
+                    <strong>Exemple 2 : </strong>
+
+                    <span id="textExample2">15 - 8 + 3 = 7 + 3 = 10 </span>
+
+                </div>
+
+                <button id="buttonExample2" class="buttonExample">Un autre exemple !</button>
+
+            </div>
+
+    <!--/************************************************************* -->
+    <!--        * CONTENU  EXERCICES-->
+    <!--************************************************************ */-->
+
+
+    <!--        <div class="titleComp">Compétence 1</div> Mais pourquoi ça revient pas à la ligne, p****n!!!-->
+
+            <div id="screenComp1">
+
+
+                <div id="divLvlComp1">
+
+                    <div class="uiLvlComp1"><strong>Exercice niveau :</strong></div>
+
+                    <div class="uiLvlComp1">1 <input id="choiceLvl1Comp1" type="radio" name="choiceLvlComp1" value="1"></div>
+
+                    <div class="uiLvlComp1">2 <input id="choiceLvl2Comp1" type="radio" name="choiceLvlComp1" value="2"></div> 
+
+                    <div class="uiLvlComp1">3 <input id="choiceLvl3Comp1" type="radio" name="choiceLvlComp1" value="3"></div>
+
+                    <button id="submitLvlComp1" class="uiLvlComp1">
+                            Démarrer l'entrainement
+                    </button>
+
+                </div>
+
+                <div id=exeComp1> 
+                    <div id="questComp1">
+                        Question : 
+                    </div>
+
+                    <div id="answerComp1">
+                        Réponse : <input id="answerPrintComp1" type="text">
+                    </div>
+
+                    <div id="solComp1">
+                        <div id="solPrintComp1">Points :</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <script type="text/javascript">
+
+/*************************************************************
+        * SCRIPT EXEMPLES
+************************************************************ */
+            
+                $("#buttonExample1").click( function() {
+                
+                    var x1, x2, x3, x4, x5;
+                    x1 = Math.floor(10+Math.random()*10);
+                    x2 = Math.floor(1 + Math.random()*9);
+                    x3 = Math.floor(1+Math.random()*19); 
+                      while (x1+x2-x3<0) {
+                          x3 = Math.floor(1+Math.random()*19); 
+                      }
+                    x4 = x1 + x2;
+                    x5 = x4 - x3;
+                
+                $("#setUpExample1").text(x1 + " + " + x2 + " - " + x3);
+                $("#step1Example1").text(x1 + " + " + x2 + " = " + x4);
+                $("#step2Example1").text(x4 + " - " + x3 + " = " + x5);
+                $("#step3Example1").text(x1 + " + " + x2 + " - " + x3 + " = " + x5);
+                
+            })
+            
+            $("#buttonExample2").click( function() {
+                
+                var x1, x2, x3, x4, x5;
+                x1 = Math.floor(10+Math.random()*10);
+                x2 = Math.floor(1 + Math.random()*9);
+                x3 = Math.floor(1+Math.random()*9); 
+                x4 = x1 - x2;
+                x5 = x4 + x3;
+                
+                $("#textExample2").text(x1 + " - " + x2 + " + " + x3 + " = " + x4 + " + " + x3 + " = " + x5); 
+            })
+            
+/*************************************************************
+        * SCRIPT EXERCICES
+************************************************************ */
+            
+            var solutionComp1, scoreComp1, stepComp1, xArray;
+            solutionComp1 = undefined;      
+            scoreComp1 = 0;
+            stepComp1 = 0;
+            xArray = [0, 0, 0, 0, 0]
+ 
+//VAR X LVL1 COMP1         
+            function funcIniVarLvl1Comp1() {
+                xArray[0] = Math.floor(10+Math.random()*10);
+                xArray[1] = Math.floor(1+Math.random()*9);
+                xArray[2] = Math.floor(1+Math.random()*9);
+                xArray[3] = xArray[0] + xArray[1];
+                xArray[4] = xArray[3] - xArray[2];
+            };     
+            
+//VAR X LVL2 COMP1         
+            function funcIniVarLvl2Comp1() {
+                xArray[0] = Math.floor(100+Math.random()*100)/10;
+                xArray[1] = Math.floor(10+Math.random()*90)/10;
+                xArray[2] = Math.floor(10+Math.random()*90)/10;
+                xArray[3] = xArray[0] - xArray[1];
+                xArray[4] = xArray[3] + xArray[2];
+            }; 
+            
+//VAR X LVL3 COMP1         
+            function funcIniVarLvl3Comp1() {
+                xArray[0] = Math.floor((Math.floor(100+Math.random()*100)/10 + Math.floor(Math.random()*2)/100 * Math.floor(Math.random()*10))*100)/100;
+                xArray[1] = Math.floor((Math.floor(10+Math.random()*90)/10 + Math.floor(Math.random()*2)/100 * Math.floor(Math.random()*10))*100)/100;
+                xArray[2] = Math.floor((Math.floor(10+Math.random()*90)/10 + Math.floor(Math.random()*2)/100 * Math.floor(Math.random()*10))*100)/100;
+                xArray[3] = xArray[0] + xArray[1];
+                xArray[4] = xArray[3] - xArray[2];
+            };
+            
+ //COMPARER LA REPONSE ET LA SOLUTION
+            function funcCheckAnswer(input, solution) {
+                if (solution === undefined) {
+                    
+                    alert("sélectionne un exercice");
+                    
+                } else if (input == solution) {
+
+                    scoreComp1++;
+                    stepComp1++;
+                    $("#solPrintComp1").text("Bien joué !!! Ton score est : " + scoreComp1);
+                
+                } else {
+                    
+                    $("#solPrintComp1").text("tu t'es trompé, c'était " + solutionComp1 + ". Ton score est " + scoreComp1);
+                    stepComp1++;
+                    
+                }
+            };             
+
+// COMP1 INITIALISATION
+            
+            function resetScoreComp1() {
+                stepComp1=1;
+                scoreComp1 = 0;
+                $('#answerPrintComp1').val("");                   
+            }
+            
+//LVL I COMP 1 INITIALISATION           
+            function funcLvl1Comp1() {
+                funcIniVarLvl1Comp1();
+                $("#questComp1").text("Fais le premier des deux calculs : " + xArray[0] + " + " + xArray[1] + " - " + xArray[2]);
+                resetScoreComp1();                   
+            }
+            
+//LVL II COMP 1 INITIALISATION           
+            function funcLvl2Comp1() {
+                funcIniVarLvl2Comp1();
+                $("#questComp1").text("Fais le premier des deux calculs : " + xArray[0] + " - " + xArray[1] + " + " + xArray[2]);
+                resetScoreComp1();
+            }
+            
+//LVL III COMP 1 INITIALISATION           
+            function funcLvl3Comp1() {
+                funcIniVarLvl3Comp1();
+                $("#questComp1").text("Fais le calcul en entier : " + xArray[0] + " + " + xArray[1] + " - " + xArray[2]);
+                resetScoreComp1();                
+            }
+
+//press ENTER
+            $('#answerPrintComp1').keydown(function (e){
+    
+                if (e.keyCode == 13) {
+                    
+                    if ($("input[name=choiceLvlComp1]:checked").val() === "1") {    // Lvl I
+                        var impaires; 
+                        impaires = [1,3,5,7,9];
+                        
+                        if (jQuery.inArray(stepComp1, impaires) != -1) {                //First step exercice
+                                
+                            solutionComp1 = xArray[3];
+                                
+                            funcCheckAnswer($('#answerPrintComp1').val(), solutionComp1);
+                        
+                            $("#questComp1").text("Termine le calcul : " + xArray[0] + " + " + xArray[1] + " - " + xArray[2]);
+                            $('#answerPrintComp1').val("");
+                                
+                        } else if (stepComp1 === 10) {                                  //End of lvl1 : 
+                                
+                            solutionComp1 = xArray[4];
+                            funcCheckAnswer($('#answerPrintComp1').val(), solutionComp1);
+                          
+                            if (scoreComp1 >4) {                                            //End lvl1 success
+                                        
+                                alert("Tu as terminé le niveau 1 félicitations !! Ton score est " + scoreComp1 + ". Maintenant, essaie le niveau 2 !");
+                                $("#solPrintComp1").text("");
+                                $("#choiceLvl2Comp1").prop("checked", true);
+                                $("input[name=choiceLvlComp1]:checked").val("2");
+                                funcLvl2Comp1();
+                                    
+                            }
+                                    
+                            else {                                                          //End lvl1 failure
+                                        
+                                alert("Recommence, tu dois t'entrainer avant de passer au prochain niveau !")
+                                funcLvl1Comp1();
+                            }
+                            
+                        } else {                                                        //Second step exercice
+                                
+                            solutionComp1 = xArray[4];
+                            funcCheckAnswer($('#answerPrintComp1').val(), solutionComp1);
+                        
+                            funcIniVarLvl1Comp1();
+                            $("#questComp1").text("Fais le premier des deux calculs : " + xArray[0] + " + " + xArray[1] + " - " + xArray[2]);
+                            $('#answerPrintComp1').val("");
+                                
+                        }
+                    
+                    
+                    } else if ($("input[name=choiceLvlComp1]:checked").val() === "2") { //Lvl II
+
+                        var impaires; 
+                        impaires = [1,3,5,7,9];
+
+                            if (jQuery.inArray(stepComp1, impaires) != -1) {                //First step exercice
+
+                                solutionComp1 = Math.round(xArray[3]*10)/10;
+
+                                funcCheckAnswer($('#answerPrintComp1').val(), solutionComp1);
+
+                                $("#questComp1").text("Termine le calcul : " + xArray[0] + " - " + xArray[1] + " + " + xArray[2]);
+                                $('#answerPrintComp1').val("");
+
+                            } else if (stepComp1 === 10) {                                  //End of lvl2 : 
+                                    
+                                solutionComp1 = Math.round(xArray[4]*10)/10;
+                                funcCheckAnswer($('#answerPrintComp1').val(), solutionComp1);
+
+                                if (scoreComp1 >4) {                                            //End lvl2 success
+
+                                    alert("Tu as terminé le niveau 2 félicitations !! Ton score est " + scoreComp1 + ". Maintenant, essaie le niveau 3 !");
+                                    $("#solPrintComp1").text("");
+                                    $("#choiceLvl3Comp1").prop("checked", true);
+                                    $("input[name=choiceLvlComp1]:checked").val("3");
+                                    funcLvl3Comp1();
+
+                                } else {                                                          //End lvl2 failure
+
+                                    alert("Recommence, tu dois t'entrainer avant de passer au prochain niveau !")
+                                    funcLvl2Comp1();
+                                    
+                                }
+
+                            } else {                                                        //Second step exercice
+
+                                solutionComp1 = Math.round(xArray[4]*10)/10;
+                                funcCheckAnswer($('#answerPrintComp1').val(), solutionComp1);
+
+                                funcIniVarLvl2Comp1();
+                                $("#questComp1").text("Fais le premier des deux calculs : " + xArray[0] + " - " + xArray[1] + " + " + xArray[2]);
+                                $('#answerPrintComp1').val("");
+
+                            }                     
+                        
+                    } else if ($("input[name=choiceLvlComp1]:checked").val() === "3") {   
+                        
+                        solutionComp1 = Math.round(xArray[4]*100)/100;
+                        
+                        if (stepComp1<10) {
+                                    
+                            funcCheckAnswer($('#answerPrintComp1').val(), solutionComp1);
+                            funcIniVarLvl3Comp1();
+                            $("#questComp1").text("Fais le calcul en entier : " + xArray[0] + " + " + xArray[1] + " - " + xArray[2]);
+                            $('#answerPrintComp1').val("");
+
+
+                        } else if (stepComp1 === 10) {                                  //End of lvl3 : 
+                                    
+                                    funcCheckAnswer($('#answerPrintComp1').val(), solutionComp1);
+
+                                    if (scoreComp1 >4) {                                            //End lvl3 success
+
+                                        alert("Tu as terminé le niveau 3 félicitations !! Ton score est " + scoreComp1);                                        
+                                        $('#answerPrintComp1').val("");
+                                    }
+
+                                    else {                                                          //End lvl3 failure
+
+                                        alert("Recommence, tu dois t'entrainer avant de passer à la prochaine leçon !")
+                                        funcLvl3Comp1();
+                                    }
+
+                                }                        
+                        
+                    }
+                }
+            })
+
+//Choix LVL            
+            $("#submitLvlComp1").click( function() {
+                var lvl;
+                lvl=$("input[name=choiceLvlComp1]:checked").val();
+                
+                if (lvl === undefined) {
+                    alert("Sélectionne ton niveau");
+                } else if (lvl === "1") {
+                    funcLvl1Comp1()
+                } else if (lvl === "2") {
+                    funcLvl2Comp1()
+                } else if (lvl === "3") {
+                    funcLvl3Comp1()
+                }
+                
+            });                
+
+       
+            
+        </script>
+        
+    </body>
+	
+</html>
